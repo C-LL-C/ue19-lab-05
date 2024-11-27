@@ -1,4 +1,4 @@
-# ue19-lab-05 - Application Python de Blagues avec JokesAPI
+# ue19-lab-05 - Application Python de Blagues
 
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/docker-available-blue.svg)](https://www.docker.com/)
