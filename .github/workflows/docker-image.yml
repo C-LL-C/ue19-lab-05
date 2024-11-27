@@ -43,7 +43,7 @@ jobs:
       # Scan de l'image Docker pour détecter les vulnérabilités avec Trivy
       - name: Scan Docker image for vulnerabilities with Trivy
         run: |
-          trivy --severity HIGH,CRITICAL ghcr.io/c-ll-c/ue19-lab-05:latest
+          trivy ghcr.io/c-ll-c/ue19-lab-05:latest
 
       # Vérifier les résultats de Trivy (optionnel)
       - name: Check Trivy results
