@@ -32,7 +32,7 @@ jobs:
       # Construire l'image Docker
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.actor }}/ue19-lab-05:latest .
+          docker build -t ghcr.io/c-ll-c/ue19-lab-05:latest .
           docker build -t ${{ secrets.DOCKER_USERNAME }}/ue19-lab-05:latest .
 
       # Publier l'image sur Docker Hub
@@ -43,4 +43,4 @@ jobs:
       # Publier l'image sur GitHub Packages (GHCR)
       - name: Push Docker image to GitHub Packages
         run: |
-          docker push ghcr.io/${{ github.actor }}/ue19-lab-05:latest
+          docker push ghcr.io/c-ll-c/ue19-lab-05:latest
