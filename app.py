@@ -1,7 +1,7 @@
 import requests
 
 def get_joke():
-    # URL de l'API pour tout types de blagues
+    # URL de l'API pour tout types de blagues.
     url = "https://v2.jokeapi.dev/joke/Any"
 
     try:
