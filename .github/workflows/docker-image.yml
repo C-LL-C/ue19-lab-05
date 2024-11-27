@@ -35,6 +35,14 @@ jobs:
           docker build -t ghcr.io/c-ll-c/ue19-lab-05:latest .
           docker build -t ${{ secrets.DOCKER_USERNAME }}/ue19-lab-05:latest .
 
+      # Scan de l'image Docker pour détecter les vulnérabilités avec Trivy
+      - name: Scan Docker image for vulnerabilities with Trivy
+        uses: aquasecurity/trivy-action@v0.0.16
+        with:
+          image: ghcr.io/c-ll-c/ue19-lab-05:latest
+        env:
+          TRIVY_SEVERITY: HIGH,CRITICAL  # Configure le niveau de sévérité des vulnérabilités à scanner
+
       # Publier l'image sur Docker Hub
       - name: Push Docker image to Docker Hub
         run: |
