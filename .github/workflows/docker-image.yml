@@ -1,4 +1,4 @@
-name: Publish Docker image
+-name: Publish Docker image
 
 on:
   push:
@@ -40,15 +40,10 @@ jobs:
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
 
-      # Scan de l'image Docker pour détecter les vulnérabilités avec Trivy
-      - name: Scan Docker image for vulnerabilities with Trivy
+      # Scanner l'image Docker pour détecter les vulnérabilités avec Trivy
+      - name: Scan Docker image with Trivy
         run: |
-          trivy ghcr.io/c-ll-c/ue19-lab-05:latest
-
-      # Vérifier les résultats de Trivy (optionnel)
-      - name: Check Trivy results
-        run: |
-          echo "Trivy scan completed. Check the logs above for vulnerabilities."
+          trivy image ghcr.io/c-ll-c/ue19-lab-05:latest
 
       # Publier l'image sur Docker Hub
       - name: Push Docker image to Docker Hub
